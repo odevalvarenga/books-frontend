@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Books API</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+
+<div class="layout">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <h2>API DE LIVROS</h2>
+
+        <p class="subtitle">
+            Biblioteca Cibernética
+        </p>
+
+
+        <div class="sidebar-menu">
+
+            <button onclick="mostrarPagina('paginaBiblioteca')">
+
+                <i class="fa-solid fa-book"></i>
+
+                Biblioteca
+
+            </button>
+
+
+            <button onclick="mostrarPagina('paginaBusca')">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                Buscar
+
+            </button>
+
+
+            <button onclick="mostrarPagina('paginaNovoLivro')">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Novo Livro
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- DASHBOARD -->
+
+    <main class="dashboard">
+
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+                    BOOKS API
+                </h1>
+
+                <p>
+                    Cyber Library Dashboard
+                </p>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- NOVO LIVRO -->
+
+        <section
+                id="paginaNovoLivro"
+                class="glass-card"
+        >
+
+            <h2>
+
+                <i class="fa-solid fa-plus"></i>
+
+                Novo Livro
+
+            </h2>
+
+
+            <div class="form-grid">
+
+                <input
+                        type="text"
+                        id="titulo"
+                        placeholder="Título do livro"
+                >
+
+                <input
+                        type="text"
+                        id="autor"
+                        placeholder="Autor"
+                >
+
+                <input
+                        type="text"
+                        id="categoria"
+                        placeholder="Categoria"
+                >
+
+                <input
+                        type="text"
+                        id="editora"
+                        placeholder="Editora"
+                >
+
+            </div>
+
+
+            <button onclick="criarLivro()">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Salvar Livro
+
+            </button>
+
+        </section>
+
+
+
+        <!-- BUSCAR -->
+
+        <section
+                id="paginaBusca"
+                class="glass-card"
+        >
+
+            <h2>
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                Buscar Livro
+
+            </h2>
+
+
+            <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="Buscar por título"
+            >
+
+
+            <button onclick="buscarLivro()">
+
+                <i class="fa-solid fa-search"></i>
+
+                Buscar
+
+            </button>
+
+        </section>
+
+
+
+        <!-- BIBLIOTECA -->
+
+        <section
+                id="paginaBiblioteca"
+                class="glass-card"
+        >
+
+            <div class="topo-lista">
+
+                <h2>
+
+                    <i class="fa-solid fa-book"></i>
+
+                    Biblioteca
+
+                </h2>
+
+
+                <button onclick="carregarLivros()">
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Atualizar
+
+                </button>
+
+            </div>
+
+
+            <div id="listaLivros"></div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
